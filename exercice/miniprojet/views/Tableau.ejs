@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <%- include('partials/bootstrapCDN.ejs') %>
+    <title>Tableau de bord</title>
+</head>
+<body >
+    <%- include('partials/navbar.ejs')  %>
+
+    <!-- <h1 class="text-center">Salam aleykoum wa rahmatullah wa barakatuh (السَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللهِ وَ بَرَكاتُهُ) : Que la paix, la Miséricorde et la bénédiction d’Allah soit sur vous.</h1>
+    <h3 class="text-center text-decoration-underline">Voici le tableau de bord</h3> -->
+
+    <% data.forEach((post) =>{  %>
+
+    <!-- <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"><%= post.resultat %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"><%= post.auteur %></h6>
+          <p class="card-text"><%= post.sourate %></p>
+          <div class="d-flex justify-content-between">
+              <a href="/post/<%= post.id %>" class="btn btn-warning card-link">Edit</a>
+              
+              <form action="/post/delete/<%= post.id %>?_method=DELETE" method="post">
+                <input type="hidden" name="_method" value="DELETE">
+                
+                <input onclick="return confirm('Supprimer ?')" class="btn btn-danger" type="submit" value="Supprimer le post">
+            </form>
+
+          </div>
+
+        </div>
+      </div> -->
+
+      <div class="card text-center bg-dark">
+        <div class="card-header text-white">
+          <h1 class="text-center">Salam aleykoum wa rahmatullah wa barakatuh (السَّلَامُ عَلَيْكُمْ وَ رَحْمَةُ اللهِ وَ بَرَكاتُهُ) : Que la paix, la Miséricorde et la bénédiction d’Allah soit sur vous.</h1>
+          <h3 class="text-center text-decoration-underline">Voici le tableau de bord</h3>
+          <h5> Mini projet</h5>
+        </div>
+        <div class="card-body" >
+          
+          <h5 class="card-title text-white"><%= post.resultat %></h5>
+          <h6 class="card-subtitle mb-2 text-white"><%= post.auteur %></h6>
+          <div class="d-flex justify-content-between">
+            <div class="container text-center text-body-secondary">
+              <div class="row ">
+                <div class="col"></div>
+                <div class="col">
+                  <a href="/post/<%= post.id %>" class="btn btn-warning card-link">Edit</a>
+                </div>
+                <div class="col">
+                  <form action="/post/delete/<%= post.id %>?_method=DELETE" method="post">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input onclick="return confirm('Supprimer ?')" class="btn btn-danger " type="submit" value="Supprimer le post">
+                  </form>
+                </div>
+                <div class="col"></div>
+              </div>
+            </div>
+              
+          </div>
+          <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+        <div class="card-footer text-body-secondary">
+          
+        </div>
+      </div>
+
+<% } ) %>
+
+</body>
+<%- include('partials/footer.ejs')  %>
+</html>
