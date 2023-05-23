@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 //Mongodb :
 var mongoose = require('mongoose');
 
-const Contact = require('./models/Contact');
+// const Contact = require('./models/Contact');
 
 const Resultat = require('./models/Resultat');
 
@@ -129,7 +129,7 @@ app.delete('/contact/delete/:id', function(req, res) {
     .catch(err=>console.log(err))
 });
 
-//-----------------Miniprojet------------------------------------------------
+//-----------------------------------------------------------------
 
 app.get('/NewEtudiant', function (req, res) {
     res.render('EditEtudiant');
